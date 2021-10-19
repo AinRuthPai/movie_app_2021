@@ -1,15 +1,18 @@
 import React from "react";
 
-function Food({fav}) {
-  return <h1>I like {fav}</h1>;
+function Food({name, number}) {
+  return <div>
+    <h2>I like {name}</h2>
+    <h3>this number is {number}</h3>
+  </div>
 }
+
+const foodILike = [{name: "kimchi", num: "1"}, {name: "ramen", num: "2"}, {name: "kimbab", num: "3"}];
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello!!!!!!!!!!!</h1>
-      <Food fav="kimchi" />
-      <Food fav="ramen" />
+    <div>
+    {foodILike.map(dish => <Food name={dish.name} number={dish.num}/>)}
     </div>
   );
 }
