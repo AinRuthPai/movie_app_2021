@@ -1,8 +1,13 @@
-body {
-  background-color: #2f2f2f;
-  color: whitesmoke;
+.container__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-body img {
-  margin-top: 50px;
+.movies {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }

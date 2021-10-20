@@ -2,9 +2,9 @@ import React from "react";
 import axios from "axios";
 import Movie from "./Movie";
 import "./App.css";
+import { Navbar, Container, Nav } from 'react-bootstrap';
 
-
-class App extends React.Component {
+class App extends React.Component { 
   state = {
     isLoading: true,
     movies: []
@@ -22,6 +22,19 @@ class App extends React.Component {
   render() {
     const {isLoading, movies} = this.state;
     return (<section className="container">
+      <div className="header">
+        <Navbar bg="light" variant="light">
+          <Container>
+          <Navbar.Brand href="#home">React & Bootstrap tutorial</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          </Nav>
+          </Container>
+        </Navbar>
+      </div>
+      <div className="container__main">
       {isLoading ? 
       (<div className="loader">
         <span className="loader__text">Loading...</span>
@@ -40,6 +53,7 @@ class App extends React.Component {
         )}
       </div>
       )}
+      </div>
     </section>
     );
   }
